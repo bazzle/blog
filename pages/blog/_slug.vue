@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header class="article header">
-      <h1>{{ post.fields.title }}</h1>
-    </header>
+    
 
     <section class="body-container">
       <main class="wrapper">

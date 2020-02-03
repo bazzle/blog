@@ -1,20 +1,24 @@
 <template>
   <div>
+    <blogHeader/>
     <!-- render data of the person -->
     <!-- render blog posts -->
     <section class="body-container">
       <ul class="items-list wrapper">
-        <li class="item" v-for="post in posts" :key="post">
+        <li class="item" v-for="post in posts" :key="post.id">
           <article-preview :post="post"></article-preview>
         </li>
       </ul>
     </section>
+    <aboutMe :aboutData="about"/>
   </div>
 </template>
 
 <script>
   import {createClient} from '~/plugins/contentful.js'
+  import blogHeader from '~/components/header.vue'
   import ArticlePreview from '~/components/article-preview.vue'
+  import aboutMe from '~/components/about.vue'
 
   const client = createClient()
 
@@ -24,15 +28,21 @@
       client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
         order: '-sys.createdAt'
+      }),
+      client.getEntries({
+        'content_type': env.CTF_ABOUT_TYPE_ID
       })
-    ]).then(([posts]) => {
+    ]).then(([posts, about]) => {
       return {
-        posts: posts.items
+        posts: posts.items,
+        about: about.items[0]
       }
     }).catch(console.error)
   },
   components: {
-    ArticlePreview
+    ArticlePreview,
+    blogHeader,
+    aboutMe
   }
 }
 </script>
