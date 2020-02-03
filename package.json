@@ -1,0 +1,31 @@
+{
+  "name": "writings",
+  "version": "1.0.0",
+  "description": "Collection of thoughts on the web",
+  "author": "Barry Richards <barry@br-web.io>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "contentful": "^7.13.1",
+    "contentful-management": "^5.12.0",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.2",
+    "vue-markdown": "^2.2.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-vue": "^6.1.2"
+  }
+}
