@@ -16,7 +16,7 @@
     "babel-runtime": "^6.26.0",
     "contentful": "^7.13.1",
     "contentful-management": "^5.12.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2",
     "vue-markdown": "^2.2.4"
